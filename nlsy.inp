@@ -1,0 +1,12 @@
+DATA: FILE = nlsy.dat;
+VARIABLE: NAMES = anti90 anti92 anti94 black
+childage gender hispanic married momage momwork
+pov90 pov92 pov94 self90 self92 self94;
+USEVARIABLES = anti90 anti92 anti94 self90 self92 self94;
+MODEL:
+anti94 ON anti92 self92;
+self94 ON anti92 self92;
+anti92 ON anti90 self90;
+self92 ON anti90 self90;
+anti94 WITH self94;
+anti92 WITH self92;
